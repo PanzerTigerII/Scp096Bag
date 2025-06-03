@@ -73,8 +73,7 @@ namespace Scp096Bag
 
 		public void Spawned(SpawnedEventArgs ev)
 		{
-			bool flag = ev.Player.Role.Type == RoleTypeId.NtfCaptain;
-			if (flag)
+			if (MainPlugin.Instance.Config.AllowedRoles.Contains(ev.Player.Role.Type))
 			{
 				Item item = ev.Player.AddItem(ItemType.SCP268);
 				this.Serials.Add(item.Serial);
@@ -99,8 +98,8 @@ namespace Scp096Bag
 				bool flag2 = i > 0;
 				if (flag2)
 				{
-					cuffer.ShowHint(string.Format(MainPlugin.Instance.Translation.PlayerMaskHint, i), 1f);
-					scp096.ShowHint(string.Format(MainPlugin.Instance.Translation.Scp096MaskHint, i), 1f);
+					cuffer.ShowHint(string.Format(MainPlugin.Instance.Translation.PlayerBagHint, i), 1f);
+					scp096.ShowHint(string.Format(MainPlugin.Instance.Translation.Scp096BagHint, i), 1f);
 					
 				}
 				yield return Timing.WaitForSeconds(1f);
