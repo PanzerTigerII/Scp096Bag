@@ -9,8 +9,8 @@ namespace Scp096Bag
 {
 	public class MainPlugin : Plugin<Config, Translations>
 	{
-		public override string Name => "SCP096Mask";
-		public override string Author => "Liginda & NEGRajdanin";
+		public override string Name => "Scp096Bag";
+		public override string Author => "Panzer VI Tiger II";
 		public override Version Version => new Version(1, 0, 0);
 		public override Version RequiredExiledVersion => new Version(8, 9, 6);
 		public override void OnEnabled()
